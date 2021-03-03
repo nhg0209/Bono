@@ -1,0 +1,45 @@
+/*Main css*/
+.Top{
+  border-bottom:2px black solid;
+  height: 60px;
+}
+.Top_right{
+  float: right;
+}
+#Main_Bono{
+  padding-left: 15px;
+}
+.Top_Main{
+  font-size: 40px;
+  font-family: sans-serif;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+
+/*Login css*/
+#Make_Account{
+  text-decoration: none;
+  color: black;
+}
+#GoToMain{
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+.Login_Main_1{
+  text-align: center;
+}
+.Login_Main_2{
+  margin: 10%;
+}
+
+/*Make Account*/
+#GoToMain{
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+  font-family: sans-serif;
+}
