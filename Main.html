@@ -5,6 +5,15 @@
     <title>Bono</title>
     <title>Bono</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com">
+
+    <script>
+      function Login(){
+        alert('Login Clicked');
+      }
+    </script>
   </head>
   <body>
 
@@ -14,9 +23,8 @@
       </span>
       <span class="Top_right">
         <a href="Ticket.html" id="Top_Ticket">Ticket</a>
-        <a href="Login.html" id="Top_Login">Login</a>
+        <a href="Login.html" id="Top_Login" onclick="Login();">Login</a>
       </span>
-
     </div>
   </body>
 </html>
