@@ -15,11 +15,14 @@
           var gauth = gapi.auth2.init({client_id: '461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com'})
           gauth.then(function(){
             console.log('Success');
+            var GoogleLoginBtn = document.querySelector('#GoogleLoginBtn');
             if(gauth.isSignedIn.get()){
               console.log('SignedIn');
+              GoogleLoginBtn.value = 'Logout';
             }
             else{
               console.log('Not SignedIn');
+              GoogleLoginBtn.value = 'LogIn';
             }
           }, function(){
             console.log('Fail');
@@ -42,6 +45,7 @@
         <a href="Make_Account.html" id="Make_Account">회원가입</a>
       </div>
     </div>
+    <input type='button' id='GoogleLoginBtn' value="Checking...">
 
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
   </body>
