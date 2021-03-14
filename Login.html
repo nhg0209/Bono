@@ -8,19 +8,16 @@
 
     <meta name="google-signin-client_id" content="461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com">
     <script>
-      function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      }
-    </script>
-    <script>
       function init(){
         console.log('init');
         gapi.load('auth2', function() {
           console.log('auth2');
+          var gauth = gapi.auth2.init({client_id: '461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com'})
+          gauth.then(function(){
+            console.log('Success');
+          }, function(){
+            console.log('Fail');
+          })
         });
       }
     </script>
@@ -39,7 +36,6 @@
         <a href="Make_Account.html" id="Make_Account">회원가입</a>
       </div>
     </div>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
   </body>
