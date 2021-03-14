@@ -15,6 +15,12 @@
           var gauth = gapi.auth2.init({client_id: '461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com'})
           gauth.then(function(){
             console.log('Success');
+            if(gauth.isSignedIn.get()){
+              console.log('SignedIn');
+            }
+            else{
+              console.log('Not SignedIn');
+            }
           }, function(){
             console.log('Fail');
           })
