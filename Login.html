@@ -8,6 +8,17 @@
 
     <meta name="google-signin-client_id" content="461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com">
     <script>
+    function LoginStatus(){
+      var GoogleLoginBtn = document.querySelector('#GoogleLoginBtn');
+      if(gauth.isSignedIn.get()){
+        console.log('SignedIn');
+        GoogleLoginBtn.value = 'Logout';
+      }
+      else{
+        console.log('Not SignedIn');
+        GoogleLoginBtn.value = 'LogIn';
+      }
+    }
       function init(){
         console.log('init');
         gapi.load('auth2', function() {
@@ -15,15 +26,7 @@
           window.gauth = gapi.auth2.init({client_id: '461685448849-i4hbmn3oq3us7t9u26f0uml6cv794mot.apps.googleusercontent.com'})
           gauth.then(function(){
             console.log('Success');
-            var GoogleLoginBtn = document.querySelector('#GoogleLoginBtn');
-            if(gauth.isSignedIn.get()){
-              console.log('SignedIn');
-              GoogleLoginBtn.value = 'Logout';
-            }
-            else{
-              console.log('Not SignedIn');
-              GoogleLoginBtn.value = 'LogIn';
-            }
+            LoginStatus();
           }, function(){
             console.log('Fail');
           })
@@ -49,13 +52,13 @@
       if(this.value === 'LogIn'){
         gauth.signIn().then(function(){
           console.log('SignedIn');
-          this.value = 'Logout';
+          LoginStatus();
         });
       }
       else{
         gauth.signOut().then(function(){
           console.log('SignedOut');
-          this.value = 'LogIn';
+          LoginStatus();
         });
       }
     ">
