@@ -49,11 +49,13 @@
       if(this.value === 'LogIn'){
         gauth.signIn().then(function(){
           console.log('SignedIn');
+          this.value = 'Logout';
         });
       }
       else{
         gauth.signOut().then(function(){
           console.log('SignedOut');
+          this.value = 'LogIn';
         });
       }
     ">
